@@ -1,0 +1,90 @@
+#:import MDToolbar kivymd.toolbar.MDToolbar
+#:import NavDrawer libs.uix.baseclass.navdrawer.NavDrawer
+#:import License libs.uix.baseclass.license.License
+#:import BaseScreen libs.uix.baseclass.basescreen.BaseScreen
+#:import About libs.uix.baseclass.about.About
+#:import Helper libs.uix.baseclass.helper.Helper
+#:import BrowseScreen libs.uix.baseclass.browse.BrowseScreen
+#:import Account libs.uix.baseclass.account.Account
+#:import Signup libs.uix.baseclass.signup.Signup
+#:import Login libs.uix.baseclass.login.Login
+#:import Upload libs.uix.baseclass.upload.Upload
+#:import Manage libs.uix.baseclass.manage.Manage
+#:import ManageArtist libs.uix.baseclass.manage_artist.ManageArtist
+#:import FileSelect libs.uix.baseclass.file_select.FileSelect
+
+#:import ManageGallery libs.uix.baseclass.manage_gallery.ManageGallery
+#:import UploadGallery libs.uix.baseclass.upload_gallery.UploadGallery
+#:import BrowseGallery libs.uix.baseclass.browse_gallery.BrowseGallery
+
+
+
+<StartScreen>
+    orientation: 'vertical'
+
+    NavDrawer:
+        id: nav_drawer
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(5)
+
+            MDToolbar:
+                id: action_bar
+                background_color: app.theme_cls.primary_color
+                title: app.title
+                left_action_items: [['menu', lambda x: nav_drawer._toggle()]]
+                elevation: 10
+                md_bg_color: app.theme_cls.primary_color
+
+            ScreenManager:
+                id: manager
+
+                Login:
+                    id: login
+
+                BaseScreen:
+                    id: base
+
+                License:
+                    id: license
+
+                About:
+                    id: about
+
+                Helper:
+                    id: helper
+
+                BrowseScreen:
+                    id: browse
+
+                Account:
+                    id: account
+
+                Signup:
+                    id: signup
+
+                Upload:
+                    id: upload
+
+                Manage:
+                    id: manage
+
+                ManageArtist:
+                    id: manage_artist
+
+                FileSelect:
+                    id: files
+
+                UploadGallery:
+                    id: upload_gallery
+
+                ManageGallery:
+                    id: manage_gallery
+
+                BrowseGallery:
+                    id: browse_gallery
+
+
+
+

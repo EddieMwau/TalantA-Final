@@ -1,0 +1,30 @@
+<FileSelect>:
+    name: 'files'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba:(1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'assets/texture-menu.png'
+
+        BoxLayout:
+            size_hint_y: None
+            height: '48dp'
+
+            Button:
+                text: 'cancel'
+                on_release: root.cancel_clicked()
+            Button:
+                text: 'select'
+                on_release: root.select_item_clicked()
+
+        FileChooser:
+            id: filechooser
+
+            FileChooserIconLayout:

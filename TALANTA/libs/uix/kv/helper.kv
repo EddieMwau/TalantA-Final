@@ -1,0 +1,41 @@
+<Helper>:
+    name: 'helper'
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:(1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'assets/account-background-crop.png'
+
+        BoxLayout:
+            id: box
+            orientation: 'vertical'
+            padding: dp(0), dp(10)
+
+            Widget:
+            Widget:
+
+            Label:
+                id: label
+                font_size: '14sp'
+                text: 'Are you stuck somewhere? Our online help utilities might help you out. click the link below to go to our help page...'
+                bold: True
+                color: 1, 1, 1, 1
+                markup: True
+                halign: 'center'
+                #on_ref_press: root.open_url(*args)
+            MDFillRoundFlatIconButton:
+                id: btn_help
+                text: 'Help'
+                background_normal: ''
+                background_color: 1,0,0,1
+                icon: 'help'
+                pos_hint: {'center_x':.5, 'center_y': .15}
+                md_bg_color: 0,1,0,1
+                on_release: root.open_url()
+
+            Widget:
+            Widget:

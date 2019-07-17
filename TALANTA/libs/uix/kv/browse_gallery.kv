@@ -1,0 +1,29 @@
+<BrowseGallery>:
+    name: 'browse_gallery'
+    BoxLayout:
+        id: box
+        orientation: 'vertical'
+        ScrollView:
+            id: scroll
+            size_hint: 1, 1
+            do_scroll_x: False
+
+            GridLayout:
+                id: grid_card
+                cols: 1
+                spacing: dp(30)
+                padding: dp(20)
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDCardPost:
+                    path_to_avatar: 'assets/default.png'
+                    name_data: 'gallery1'
+                    text_post: 'Event 2\n Event 2 description'
+
+                MDCardPost:
+                    path_to_avatar: 'assets/default.png'
+                    name_data: 'gallery1'
+                    text_post: 'Event 3\n Event 3 description'
+
+

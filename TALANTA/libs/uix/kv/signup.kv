@@ -1,0 +1,80 @@
+<Signup>:
+    name: 'signup'
+
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba:(1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'assets/account-background-crop.png'
+        orientation: 'vertical'
+        id: main_win
+        space_x: self.size[0]/6
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: main_win.space_x, 10
+            BoxLayout:
+                orientation: 'vertical'
+                canvas.before:
+                    Color:
+                        rgba:(1,1,1,.8)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                ScrollView:
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_y: None
+                        height: self.minimum_height
+                        padding: main_win.space_x, 10
+                        spacing: dp(15)
+
+                        MDLabel:
+                            id: info
+                            text: ''
+                            markup: True
+                            size_hint_y: None
+                            height: 20
+
+                        MDTextField:
+                            id: fname_field
+                            hint_text: "First Name"
+                        MDTextField:
+                            id: lname_field
+                            hint_text: "Last Name"
+                        MDTextField:
+                            id: username_field
+                            hint_text: "User Name"
+                        MDTextField:
+                            id: pwd_field
+                            hint_text: "Password"
+                            password: True
+                        MDTextField:
+                            id: confirm_pwd_field
+                            hint_text: "Confirm Password"
+                            password: True
+                        MDTextField:
+                            id: email_field
+                            hint_text: "Email Address"
+                Spinner:
+                    id: designation_field
+                    text: 'Sign up as?'
+                    values: 'artist','enthusiast','gallery'
+                    size_hint_y: None
+                    height: dp(40)
+                Label:
+                    id: spaceer
+                    size_hint_y: None
+                    height: dp(10)
+                Button:
+                    id: signup
+                    text: 'sign up'
+                    background_normal: ''
+                    background_color: (0,0,1,1)
+                    size_hint_y: None
+                    height: dp(40)
+                    on_release: root.register_user()

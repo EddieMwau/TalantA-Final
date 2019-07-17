@@ -1,0 +1,76 @@
+<LabelAccountPage@Label>
+    size_hint: None, None
+    size: self.texture_size
+    pos_hint: {'center_x': .5}
+
+
+<BoxMinimumHeight@BoxLayout>
+    size_hint_y: None
+    height: self.minimum_height
+
+
+<Account>:
+    name: 'account'
+
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: './assets/account-background-crop.png'
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(30)
+
+            BoxMinimumHeight:
+                orientation: 'vertical'
+                padding: 0, dp(50), 0, 0
+                spacing: dp(30)
+                pos_hint: {'top': 1}
+
+                Image:
+                    size_hint: None, None
+                    size: self.size
+                    source: './assets/default.png'
+                    pos_hint: {'center_x': .5}
+
+                LabelAccountPage:
+                    id: acc_name
+                    halign: 'center'
+                    font_size: '30sp'
+                    bold: True
+            BoxMinimumHeight:
+                orientation: 'vertical'
+                #pos_hint: {'center_x':.5, 'center_y': .15}
+                # cols: 2
+                padding: 20
+                spacing: 20
+                MDFillRoundFlatIconButton:
+                    id: btn_browse
+                    text: 'Browse'
+                    icon: 'search-web'
+                    pos_hint: {'center_x':.5, 'center_y': .15}
+                    #md_bg_color: 1,0,0,1
+                    on_release:app.show_browse_art()
+                MDFillRoundFlatIconButton:
+                    id: btn_manage
+                    text: 'Manage'
+                    icon: 'account'
+                    pos_hint: {'center_x':.5, 'center_y': .15}
+                    on_release: root.show_edit_account()
+                MDFillRoundFlatIconButton:
+                    id: btn_about
+                    text: 'about'
+                    icon: 'account-details'
+                    pos_hint: {'center_x':.5, 'center_y': .15}
+                MDFillRoundFlatIconButton:
+                    id: btn_exit
+                    text: 'exit'
+                    icon: 'exit-to-app'
+                    pos_hint: {'center_x':.5, 'center_y': .15}
+                    on_release: root.exit_from_acc()
+
+
+
+

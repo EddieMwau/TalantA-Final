@@ -1,0 +1,96 @@
+# -*- coding: ut-8 -*-
+#
+# This file created with KivyCreatorProject
+# <https://github.com/HeaTTheatR/KivyCreatorProgect
+#
+# Copyright © 2017 Easy
+#
+# For suggestions and questions:
+# <kivydevelopment@gmail.com>
+# 
+# LICENSE: MIT
+
+
+<Login>:
+    name: 'login'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        #Label:
+        #    color: 0, 0, 0, 1
+        #    font_size: '14sp'
+        #    text: 'Create and replace screen'
+        canvas.before:
+            Color:
+                rgba:(1,1,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'assets/account-background-crop.png'
+        orientation: 'vertical'
+        id: main_win2
+        space_x: self.size[0]/6
+        BoxLayout:
+            orientation: 'vertical'
+            padding: main_win2.space_x, 10
+            BoxLayout:
+                orientation: 'vertical'
+                canvas.before:
+                    Color:
+                        rgba:(1,1,1,.8)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                ScrollView:
+
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_y: None
+                        height: self.minimum_height
+                        padding: main_win2.space_x, 10
+
+                        spacing: dp(15)
+                        id: holder
+                        MDLabel:
+                            id: info
+                            text: ''
+                            markup: True
+                            size_hint_y: None
+                            height: 20
+                        MDTextField:
+                            id: username_field
+                            hint_text: "User Name"
+                        Widget:
+                            size_hint_y: None
+                            height: dp(5)
+                        MDTextField:
+                            id: pwd_field
+                            password: True
+                            hint_text: "Password"
+                        MDFillRoundFlatButton:
+                            id: login_btn
+                            on_release: root.validate_user()
+                            text: "Login"
+                            pos_hint: {'center_x': .5, 'center_y': .15}
+                        Widget:
+                            size_hint_y: None
+                            height: dp(20)
+
+                        MDLabel:
+                            text: 'Do not have an account? Create Account Below...'
+                            color: 0, 0, 0, 1
+                            halign: 'center'
+                            font_style: 'Caption'
+
+                        Widget:
+                            size_hint_y: None
+                            height: dp(20)
+
+                        MDFillRoundFlatButton:
+                            id: signup_btn
+                            text: "Sign Up"
+                            pos_hint: {'center_x': .5, 'center_y': .15}
+                            on_release: app.show_sign_up()

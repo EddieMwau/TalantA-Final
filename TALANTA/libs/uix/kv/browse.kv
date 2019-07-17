@@ -1,0 +1,99 @@
+<BrowseScreen>:
+    name: 'browse'
+    BoxLayout:
+        id: box
+        orientation: 'vertical'
+        ScrollView:
+            id: scroll
+            size_hint: 1, 1
+            do_scroll_x: False
+
+            GridLayout:
+                id: grid_card
+                cols: 1
+                spacing: dp(30)
+                padding: dp(20)
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    id: title
+                    color: 0,0,0,1
+                    text: root.usernames[0]
+                    bold: True
+                Label:
+                    id: name
+                    color: 0,0,0,1
+                    text: root.title[0]
+                Label:
+                    id: des
+                    color: 0,0,0,.7
+                    text: root.description[0]
+                Button:
+                    id: img
+                    background_normal: './assets/african-lion-951778_1280.png'
+                    size_hint_y: None
+                    height: 500
+
+
+                Label:
+                    id: title
+                    color: 0,0,0,1
+                    text: root.usernames[1]
+                    bold: True
+                Label:
+                    id: name
+                    color: 0,0,0,1
+                    text: root.title[1]
+                Label:
+                    id: des
+                    color: 0,0,0,.7
+                    text: root.description[1]
+                Button:
+                    id: img
+                    background_normal: './assets/f2.png'
+                    size_hint_y: None
+                    height: 500
+
+
+                Label:
+                    id: title
+                    color: 0,0,0,1
+                    text: root.usernames[2]
+                    bold: True
+                Label:
+                    id: name
+                    color: 0,0,0,1
+                    text: root.title[2]
+                Label:
+                    id: des
+                    color: 0,0,0,.7
+                    text: root.description[2]
+                Button:
+                    id: img
+                    background_normal: './assets/f5.jpg'
+                    size_hint_y: None
+                    height: 500
+
+
+                Label:
+                    id: title
+                    color: 0,0,0,1
+                    text: root.usernames[3]
+                    bold: True
+                Label:
+                    id: name
+                    color: 0,0,0,1
+                    text: root.title[3]
+                Label:
+                    id: des
+                    color: 0,0,0,.7
+                    text: root.description[3]
+                Button:
+                    id: img
+                    background_normal:
+                    size_hint_y: None
+                    height: 500
+
+
+
