@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "main.py", line 69, in main
+    app.run()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/kivy/app.py", line 829, in run
+    root = self.build()
+  File "/home/eddie/Desktop/modify final/name_project/name_project.py", line 71, in build
+    self.load_all_kv_files(os.path.join(self.directory, 'libs', 'uix', 'kv'))
+  File "/home/eddie/Desktop/modify final/name_project/name_project.py", line 84, in load_all_kv_files
+    Builder.load_string(kv.read())
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/kivy/lang/builder.py", line 368, in load_string
+    parser = Parser(content=string, filename=fn)
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/kivy/lang/parser.py", line 401, in __init__
+    self.parse(content)
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/kivy/lang/parser.py", line 507, in parse
+    self.execute_directives()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/kivy/lang/parser.py", line 471, in execute_directives
+    mod = __import__(package)
+  File "/home/eddie/Desktop/modify final/name_project/libs/uix/baseclass/browse.py", line 8, in <module>
+    class BrowseScreen(Screen):
+  File "/home/eddie/Desktop/modify final/name_project/libs/uix/baseclass/browse.py", line 9, in BrowseScreen
+    db = pymysql.connect('localhost', 'root', '', 'talanta')
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/eddie/anaconda3/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
